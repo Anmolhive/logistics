@@ -21,6 +21,15 @@
 .font-tw-cen-mt {
   font-family: "Tw-Cen-Mt", sans-serif !important;
 }
+@media (max-width: 767px) {
+  .ms-3 {
+    margin-left: 1.5rem !important;
+  }
+  .ps-2 {
+    padding-left: 1rem !important;
+  }
+}
+
 
 .my-logo {
   margin-top: 40px;
@@ -14090,3 +14099,4 @@ p.counter-prefex {
     margin-bottom: 20px !important;
   }
 }
+

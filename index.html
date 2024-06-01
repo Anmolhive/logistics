@@ -43,6 +43,10 @@
             scroll-behavior: smooth;
         }
 
+        body {
+            background-color: #fff !important;
+        }
+
         .ftco-section,
         .ftco-section .container .ftco-search .row .col-md-12 .tab-content .tab-pane .speaker-wrap {
             background: linear-gradient(-160deg, #00091cda, #002660e0);
@@ -188,6 +192,10 @@
             .smobile {
                 display: none;
             }
+
+            .banner-logo {
+                width: 100% !important;
+            }
         }
 
 
@@ -215,17 +223,25 @@
                 </div>
                 <div class="col-12 col-md d-flex justify-content-md-end align-items-center">
                     <div class="social-media">
-                        <h5 class="mb-0 d-flex">
+                        <h5 class="mb-0 d-flex gap-5 ps-2">
 
                             <a href="https://www.linkedin.com/company/logisticsgulfnews-com/"
                                 class="d-flex align-items-center justify-content-center -scale-2" target="_blank"><span
                                     class="fa fa-linkedin"><i class="sr-only">Linkedin</i></span></a>
                             <a href="https://twitter.com/LogiGulfNews"
-                                class="d-flex align-items-center justify-content-center -scale-2 px-3" target="_blank"><svg width="14" hight="14" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 72 72" viewBox="0 0 72 72" id="twitter-x"><switch><g><path fill="#fff" d="M42.5,31.2L66,6h-6L39.8,27.6L24,6H4l24.6,33.6L4,66
-                                        h6l21.3-22.8L48,66h20L42.5,31.2z M12.9,10h8l38.1,52h-8L12.9,10z"></path></g></switch></svg> </a>
+                                class="d-flex align-items-center justify-content-center -scale-2 px-md-3"
+                                target="_blank"><svg width="14" hight="14" xmlns="http://www.w3.org/2000/svg"
+                                    enable-background="new 0 0 72 72" viewBox="0 0 72 72" id="twitter-x">
+                                    <switch>
+                                        <g>
+                                            <path fill="#fff" d="M42.5,31.2L66,6h-6L39.8,27.6L24,6H4l24.6,33.6L4,66
+                                        h6l21.3-22.8L48,66h20L42.5,31.2z M12.9,10h8l38.1,52h-8L12.9,10z"></path>
+                                        </g>
+                                    </switch>
+                                </svg> </a>
                             <a href="https://www.facebook.com/profile.php?id=100092717466635"
-                                class="d-flex align-items-center justify-content-center -scale-2" target="_blank"><span
-                                    class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                                class="d-flex align-items-center justify-content-center -scale-2 ms-3"
+                                target="_blank"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
 
                         </h5>
                     </div>
@@ -278,18 +294,104 @@
                 <div class="col-md-12 ftco-animate text-center">
 
 
-                    <img src="images/2024/banner-logo.png" class=" mb-0" style="width: 50%;">
+                    <img src="images/2024/banner-logo.png" class="banner-logo mb-0" style="width: 50%;">
                     <p class="mb-0 mt-3"><a
                             href="https://docs.google.com/forms/d/1RPn4kaDLHnPqgwSUd1jgkRsd2_-g1EQoAjOEAOpmin0/viewform?edit_requested=true"
                             target="_blank" class="btn btn-primary text-uppercase" style="    font-weight: 600; font-size: 20px; background: #05713c !important; color: #ffffff !important; margin-top: 10px;padding: 10px 30px;
     border: 0px solid !important;">Register Now</a></p>
+                    <style>
+                        .bg-countdown {
+                            border-radius: 1rem;
+                            background: linear-gradient(120deg, #1d4fd8b7, #22d3eece);
+                        }
+
+                        .counter {
+                            border-radius: 100%;
+                            display: grid;
+                            place-items: center;
+                            width: 4rem;
+                            height: 4rem;
+                            background-color: rgba(255, 255, 255, .4);
+                            backdrop-filter: blur(5px);
+                            font-weight: 600;
+                            font-size: 2rem;
+                            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                        }
+
+                        .fw-bold {
+                            font-weight: 700;
+                        }
+                    </style>
+                    <div class="row justify-content-center pt-5">
+                        <div class="col-4 d-flex justify-content-center bg-countdown p-4" style="gap:1rem">
+                            <div class="">
+                                <div id="CounterDays" class="counter text-white">69</div>
+                                <p class="text-uppercase text-white mb-0">days</p>
+                            </div>
+                            <div class="">
+                                <div id="CounterHours" class="days counter text-white">08</div>
+                                <p class="text-uppercase text-white mb-0">hr</p>
+                            </div>
+                            <div class="">
+                                <div id="CounterMin" class="days counter text-white">19</div>
+                                <p class="text-uppercase text-white mb-0">min</p>
+                            </div>
+                            <div class="">
+                                <div id="CounterSec" class="days counter text-white">44</div>
+                                <p class="text-uppercase text-white mb-0">sec</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        function updateCountdown() {
+                            const countdownElement = document.getElementById('countdown');
+
+                            // Current date and time
+                            const now = new Date();
+
+                            // Target date and time (29th October of the current year)
+                            const year = now.getFullYear();
+                            const targetDate = new Date(`October 29, ${year} 00:00:00`);
+
+                            // Calculate the difference in milliseconds
+                            const difference = targetDate - now;
+
+                            // Time calculations for days, hours, minutes, and seconds
+                            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                            // Display the result
+                            // countdownElement.innerHTML = ${ days }d ${ hours }h ${ minutes }m ${ seconds } s;
+                            document.getElementById('CounterDays').textContent = days < 10 ? `0${days}` : days;
+                            document.getElementById('CounterHours').textContent = hours < 10 ? `0${hours}` : hours;
+                            document.getElementById('CounterMin').textContent = minutes < 10 ? `0${minutes}` : minutes;
+                            document.getElementById('CounterSec').textContent = seconds < 10 ? `0${seconds}` : seconds;
+
+                            // If the countdown is over, display a message
+                            if (difference < 0) {
+                                document.getElementById('CounterDays').textContent = '00';
+                                document.getElementById('CounterHours').textContent = '00';
+                                document.getElementById('CounterMin').textContent = '00';
+                                document.getElementById('CounterSec').textContent = '00';
+                            }
+                        }
+
+                        // Update the countdown every second
+                        setInterval(updateCountdown, 999);
+
+                        // Initial call to display the countdown immediately
+                        updateCountdown();
+                    </script>
 
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="ftco-about ftco-no-pt ftco-no-pb img" style="background-color: #e3e5e7;" id="about">
+    <section class="ftco-about ftco-no-pt ftco-no-pb img" style="background-color: #fff;" id="about">
         <div class="container">
             <div class="row d-flex">
                 <div class="col-md-12 about-intro">
@@ -1833,8 +1935,18 @@
                         <ul class="ftco-footer-social list-unstyled mt-2" id="footer-social-icons">
                             <li class="ftco-animate"><a href="https://www.linkedin.com/company/logisticsgulfnews-com/"
                                     target="_blank"><span class="fa fa-linkedin"></span></a></li>
-                            <li class="ftco-animate" style="place-items: center;"><a href="https://twitter.com/LogiGulfNews" target="_blank" class="d-flex justify-content-center align-items-center"><svg width="14" height="14" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 72 72" viewBox="0 0 72 72" id="twitter-x"><switch><g><path fill="#2563eb" d="M42.5,31.2L66,6h-6L39.8,27.6L24,6H4l24.6,33.6L4,66
-                                h6l21.3-22.8L48,66h20L42.5,31.2z M12.9,10h8l38.1,52h-8L12.9,10z"></path></g></switch></svg></a></li>
+                            <li class="ftco-animate" style="place-items: center;"><a
+                                    href="https://twitter.com/LogiGulfNews" target="_blank"
+                                    class="d-flex justify-content-center align-items-center"><svg width="14" height="14"
+                                        xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 72 72"
+                                        viewBox="0 0 72 72" id="twitter-x">
+                                        <switch>
+                                            <g>
+                                                <path fill="#2563eb" d="M42.5,31.2L66,6h-6L39.8,27.6L24,6H4l24.6,33.6L4,66
+                                h6l21.3-22.8L48,66h20L42.5,31.2z M12.9,10h8l38.1,52h-8L12.9,10z"></path>
+                                            </g>
+                                        </switch>
+                                    </svg></a></li>
                             <li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=100092717466635"
                                     target="_blank"><span class="fa fa-facebook"></span></a></li>
 
@@ -1928,6 +2040,7 @@
             </div>
         </div>
     </footer>
+
 
 
 
