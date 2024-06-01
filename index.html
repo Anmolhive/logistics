@@ -148,7 +148,7 @@
 
         section#section-counter {
             padding-top: 0px !important;
-            padding-bottom: 71px !important;
+            padding-bottom: 60px !important;
         }
 
         .ftco-section .container .ftco-search .row .col-md-12 .tab-content .tab-pane .speaker-wrap {
@@ -206,6 +206,32 @@
         /*  */
         .-scale-2 {
             scale: 2;
+        }
+
+        .bg-countdown {
+            border-radius: 1rem;
+            /* background: rgba(0, 0, 0, .4); */
+        }
+
+        .counter {
+            border-radius: 100%;
+            display: grid;
+            place-items: center;
+            width: 4rem;
+            height: 4rem;
+            background-color: rgba(255, 255, 255, .3);
+            backdrop-filter: blur(5px);
+            font-weight: 600;
+            font-size: 1.8rem;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .fw-bold {
+            font-weight: 700;
+        }
+
+        .owl-carousel .owl-stage {
+            transition-timing-function: linear !important;
         }
     </style>
 </head>
@@ -301,29 +327,6 @@
                             href="https://docs.google.com/forms/d/1RPn4kaDLHnPqgwSUd1jgkRsd2_-g1EQoAjOEAOpmin0/viewform?edit_requested=true"
                             target="_blank" class="btn btn-primary text-uppercase" style="    font-weight: 600; font-size: 20px; background: #05713c !important; color: #ffffff !important; margin-top: 10px;padding: 10px 30px;
     border: 0px solid !important;">Register Now</a></p>
-                    <style>
-                        .bg-countdown {
-                            border-radius: 1rem;
-                            /* background: rgba(0, 0, 0, .4); */
-                        }
-
-                        .counter {
-                            border-radius: 100%;
-                            display: grid;
-                            place-items: center;
-                            width: 4rem;
-                            height: 4rem;
-                            background-color: rgba(255, 255, 255, .3);
-                            backdrop-filter: blur(5px);
-                            font-weight: 600;
-                            font-size: 1.8rem;
-                            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                        }
-
-                        .fw-bold {
-                            font-weight: 700;
-                        }
-                    </style>
                     <div class="row justify-content-center pt-5">
                         <div class="col-11 col-md-4 d-flex justify-content-center bg-countdown p-4" style="gap:1rem">
                             <div class="">
@@ -1924,6 +1927,33 @@
             </div>
         </div>
     </section>
+    <section class="py-5">
+        <h2 class="text-center" style="color: #000; font-weight: 700; font-size: 37.5px;">Thank you to all our 2024
+            Sponsors</h2>
+        <div class="owl-carousel pt-4">
+            <div>
+                <img src="images/2024/LogiPoint_Gold-Sponsor.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/2023/gold-logo1.png" alt="">
+            </div>
+            <div>
+                <img src="images/2024/InvX.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/2023/LE_LSCS_Logo_Blue_resize_new.png" alt="">
+            </div>
+            <div>
+                <img src="images/2023/Silver-Sponsor-1.png" alt="">
+            </div>
+            <div>
+                <img src="images/2023/haira.png" alt="">
+            </div>
+            <div>
+                <img src="images/2024/SCT- Strategic Partners.png" alt="">
+            </div>
+        </div>
+    </section>
 
     <footer class="ftco-footer" id="ftco-footer">
         <div class="container">
@@ -2075,6 +2105,32 @@
         function display() {
             document.write(document.getElementById("myId").style.color);
         }
+    </script>
+
+    <script>
+        /*
+             items: 5,
+                loop: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+        */
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                dots: false,
+                center: true,
+                loop: true,
+                items: 4,
+                loop: true,
+                margin: 100,
+                autoplay: true,
+                slideTransition: 'linear',
+                autoplayTimeout: 0,
+                autoplaySpeed: 3000,
+                autoplayHoverPause: false,
+            });
+        });
     </script>
 
 
