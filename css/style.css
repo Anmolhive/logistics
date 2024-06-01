@@ -12778,7 +12778,7 @@ textarea.form-control {
   color: #fff;
   border-radius: 50%;
   position: relative;
-  background: #05713c;
+  background: #fff;
 }
 .ftco-footer-social li a span {
   position: absolute;
@@ -12788,7 +12788,7 @@ textarea.form-control {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  color: #fff !important;
+  color: #2563eb !important;
 }
 .ftco-footer-social li a:hover {
   color: #05713c;
